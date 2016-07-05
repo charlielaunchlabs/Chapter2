@@ -7,7 +7,7 @@ namespace ChapterTwo
 {
 	public partial class ChapterTwoPage : ContentPage
 	{
-		
+
 
 		Label labelSmall = new Label
 		{
@@ -39,6 +39,7 @@ namespace ChapterTwo
 
 		Entry entry = new Entry
 		{
+			Text = "",
 			Placeholder = "Username",
 			VerticalOptions = LayoutOptions.Center,
 			Keyboard = Keyboard.Text
@@ -83,11 +84,13 @@ namespace ChapterTwo
 				labelLarge.FontSize = 40;
 			}
 
-			String s = entry.Text;
-			int l = s.Length;
-			         
+			try
+			{
+				String s = entry.Text;
+				int l = s.Length;
 
-			if (l==0)
+
+				if (l == 0)
 				{
 					this.BackgroundColor = Color.Red;
 					DisplayAlert("Ambot", "This is Empty P**k", "Fin");
@@ -97,6 +100,9 @@ namespace ChapterTwo
 					this.BackgroundColor = Color.Default;
 					DisplayAlert("Alert", s, "OK");
 				}
+			}
+			catch (System.NullReferenceException)
+			{ }
 
 
 		}
