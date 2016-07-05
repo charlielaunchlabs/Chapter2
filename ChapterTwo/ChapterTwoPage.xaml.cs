@@ -84,9 +84,10 @@ namespace ChapterTwo
 			}
 
 			String s = entry.Text;
+			int l = s.Length;
+			         
 
-
-				if (s.Length == 0)
+			if (l==0)
 				{
 					this.BackgroundColor = Color.Red;
 					DisplayAlert("Ambot", "This is Empty P**k", "Fin");
